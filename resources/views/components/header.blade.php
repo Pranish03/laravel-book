@@ -1,8 +1,8 @@
 <header class="py-5">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div class="shrink-0 font-bold text-3xl text-slate-700">
+        <a href="/" class="shrink-0 font-bold text-3xl text-slate-700">
             BookStore
-        </div>
+        </a>
         <div class="hidden md:flex items-stretch">
             <div class="relative">
                 <select
