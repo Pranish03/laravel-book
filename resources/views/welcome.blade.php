@@ -45,8 +45,10 @@
         <div class="grid grid-cols-5 gap-10">
 
             @foreach ($books as $book)
-                <x-book-card imgUrl="{{ $book['imgUrl'] }}" title="{{ $book['title'] }}" author="{{ $book['author'] }}"
-                    price="{{ $book['price'] }}" />
+                <a href="/book">
+                    <x-book-card imgUrl="{{ $book['imgUrl'] }}" title="{{ $book['title'] }}" author="{{ $book['author'] }}"
+                        price="{{ $book['price'] }}" />
+                </a>
             @endforeach
 
         </div>
