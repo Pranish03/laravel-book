@@ -1,4 +1,4 @@
-<footer class="bg-slate-200 text-zinc-300 mt-23">
+<footer class="bg-slate-200 text-zinc-300 mt-10">
     <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
             <h2 class="text-2xl font-bold text-slate-600">BookStore</h2>
