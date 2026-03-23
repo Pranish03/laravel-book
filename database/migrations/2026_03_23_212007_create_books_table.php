@@ -15,20 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->decimal('price', 10, 2);
+            $table->double('price');
 
-            $table->string('img_url')->nullable();
+            $table->string('img_url');
 
             $table->text('description');
-            $table->date('published_on')->nullable();
             $table->string('isbn')->unique();
+            $table->date('published_on');
+            $table->string('published_by');
 
             $table->unsignedInteger('pages');
-
-            $table->decimal('width', 5, 2)->nullable();
-            $table->decimal('height', 5, 2)->nullable();
-            $table->decimal('thickness', 5, 2)->nullable();
-
             $table->timestamps();
         });
     }
