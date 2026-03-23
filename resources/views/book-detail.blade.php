@@ -22,8 +22,8 @@
 
         <div>
             <h1 class="text-3xl font-semibold text-zinc-900">{{ $book['title'] }}</h1>
-            <h2 class="text-lg text-zinc-700 font-medium mb-4">By {{ $book['author'] }}</h2>
-            <p class="text-2xl font-medium text-zinc-800 mb-4">Rs. {{ $book['price'] }}</p>
+            <h2 class="text-zinc-700 font-medium mb-4">By {{ $book['author'] }}</h2>
+            <p class="text-2xl font-semibold text-zinc-800 mb-4">Rs. {{ $book['price'] }}</p>
 
             <div class="flex items-center gap-4">
                 <button
