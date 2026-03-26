@@ -53,6 +53,14 @@
                     <input type="file" name="image" id="image" class="hidden">
                 </div>
 
+                <div>
+                    <label class="block text-lg mb-2">Current image</label>
+                    <div
+                        class="h-[142px] border-2 border-zinc-400 border-dotted rounded-md py-2 flex items-center justify-center">
+                        <img class="h-full" src="{{ asset($book->img_url) }}" alt="{{ $book->title }}">
+                    </div>
+                </div>
+
                 <div class="col-span-2">
                     <label for="description" class="block text-lg mb-2">Description*</label>
                     <textarea name="description" id="description" placeholder="An epic tale of adventure and discovery."
