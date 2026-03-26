@@ -44,6 +44,38 @@ class BookController extends Controller
         return redirect('/admin/books');
     }
 
+    public function edit(string $id)
+    {
+        $book = Book::find($id);
+
+        return view('admin.books.edit', compact('book'));
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $book = Book::find($id);
+
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->price = $request->price;
+        $book->description = $request->description;
+        $book->isbn = $request->isbn;
+        $book->published_on = $request->published_on;
+        $book->published_by = $request->published_by;
+        $book->pages = $request->pages;
+
+        $file = $request->image;
+
+        if ($file) {
+            $file_name = time() . "_" . rand() . "." . $file->getClientOriginalExtension();
+            $file->move("images/", $file_name);
+            $book->img_url = "images/{$file_name}";
+        }
+
+        $book->save();
+        return redirect('/admin/books');
+    }
+
     public function delete(string $id)
     {
         $book = Book::find($id);

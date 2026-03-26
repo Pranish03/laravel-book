@@ -27,7 +27,6 @@
                     <th class="py-3 px-4">Title</th>
                     <th class="py-3 px-4">Author</th>
                     <th class="py-3 px-4">Price</th>
-                    <th class="py-3 px-4">ISBN</th>
                     <th class="py-3 px-4">Created at</th>
                     <th class="py-3 px-4">Updated at</th>
                     <th class="py-3 px-4">Actions</th>
@@ -41,16 +40,15 @@
                             {{ $book->title }}</td>
                         <td class="py-3 px-4">{{ $book->author }}</td>
                         <td class="py-3 px-4">Rs. {{ $book->price }}</td>
-                        <td class="py-3 px-4">{{ $book->isbn }}</td>
                         <td class="py-3 px-4">{{ $book->created_at->diffForHumans() }}</td>
                         <td class="py-3 px-4">{{ $book->updated_at->diffForHumans() }}</td>
                         <td class="py-3 px-4">
                             <div class="flex items-center gap-4 text-xl">
-                                <a href="" class="text-slate-600">
+                                <a href="/admin/books/{{ $book->id }}/edit" class="text-slate-600">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
 
-                                <form method="POST" action="/admin/books/delete/{{ $book->id }}">
+                                <form method="POST" action="/admin/books/{{ $book->id }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="text-red-600 cursor-pointer" type="submit">

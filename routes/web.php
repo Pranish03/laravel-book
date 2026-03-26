@@ -15,4 +15,6 @@ Route::get('admin', function () {
 Route::get('admin/books', [BookController::class, 'index']);
 Route::get('admin/books/create', [BookController::class, 'create']);
 Route::post('admin/books/store', [BookController::class, 'store']);
-Route::delete('admin/books/delete/{id}', [BookController::class, 'delete']);
+Route::get('admin/books/{id}/edit', [BookController::class, 'edit']);
+Route::patch('admin/books/{id}', [BookController::class, 'update']);
+Route::delete('admin/books/{id}', [BookController::class, 'delete']);
