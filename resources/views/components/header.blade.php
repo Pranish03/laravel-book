@@ -24,8 +24,34 @@
             </button>
         </div>
         <div class="flex items-center gap-5">
-            <div class="bg-slate-200 flex items-center justify-center text-xl text-slate-700 h-10 w-10 rounded-full">
-                <i class="fa-regular fa-user"></i>
+            <div class="relative">
+                <div id="dropdown-js"
+                    class="bg-slate-200 flex items-center justify-center text-xl text-slate-700 h-10 w-10 rounded-full cursor-pointer">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+
+                <div id="close-js" class="fixed inset-0 z-40 hidden"></div>
+
+                <div id="menu-js"
+                    class="absolute shadow border border-zinc-200 rounded-lg text-lg py-1 w-max space-y-1 bg-white text-zinc-800 z-50 top-13 left-0 hidden">
+                    <div class="px-1">
+                        <a href="" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
+                            Dashboard
+                        </a>
+                    </div>
+                    <div class="border-b border-zinc-200"></div>
+                    <div class="px-1">
+                        <a href="" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
+                            Account
+                        </a>
+                    </div>
+                    <div class="px-1">
+                        <a href=""
+                            class="bg-white min-w-[140px] hover:bg-red-100 text-red-600 px-3 py-1 block rounded-md">
+                            Logout
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <div
