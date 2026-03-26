@@ -37,32 +37,30 @@
                 <div class="col-span-2">
                     <label class="block text-lg mb-2">Image*</label>
 
-                    <label for="image-js"
-                        class="bg-white hover:bg-slate-100 border-2 border-zinc-400 rounded-md py-8 border-dotted flex flex-col justify-center items-center gap-2 cursor-pointer">
-                        <span class="text-4xl text-zinc-500">
-                            <i class="fa-solid fa-file-arrow-up"></i>
-                        </span>
-                        <span class="text-lg text-zinc-600">
-                            Upload an image
-                        </span>
-                    </label>
+                    <label for="imageInput-js"
+                        class="bg-white h-[142px] hover:bg-slate-100 border-2 border-zinc-400 rounded-md py-8 border-dotted flex justify-center items-center cursor-pointer">
+                        <div id="uploadContainer-js">
+                            <div class="flex flex-col justify-center items-center gap-2">
+                                <span class="text-4xl text-zinc-500">
+                                    <i class="fa-solid fa-file-arrow-up"></i>
+                                </span>
+                                <span class="text-md text-zinc-600">
+                                    Upload an image
+                                </span>
+                            </div>
+                        </div>
 
-                    <input type="file" name="image" id="image-js" class="hidden">
-                </div>
-
-                <div id="preview-container-js" class="hidden">
-                    <label class="block text-lg mb-2">Selected image</label>
-                    <div
-                        class="h-[142px] border-2 border-zinc-400 border-dotted rounded-md py-2 flex items-center justify-center">
-                        <div class="h-full relative">
-                            <img class="h-full" id="preview-js" src="#" alt="Preview">
+                        <div id="previewContainer-js" class="h-auto relative hidden">
+                            <img class="h-[120px]" id="imagePreview-js" src="#" alt="Preview">
                             <button type="button"
                                 class="absolute -top-1.5 -right-1.5 h-6 w-6 flex items-center justify-center cursor-pointer text-sm text-white bg-red-600 rounded-full"
-                                id="remove-image-js">
+                                id="removeBtn-js">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                         </div>
-                    </div>
+                    </label>
+
+                    <input type="file" name="image" id="imageInput-js" class="hidden">
                 </div>
 
                 <div class="col-span-2">
@@ -107,31 +105,27 @@
     </div>
 
     <script>
-        document.getElementById("image-js").addEventListener("change", (e) => {
-            const file = e.target.files[0];
-            const preview = document.getElementById("preview-js");
-            const previewContainer = document.getElementById("preview-container-js");
+        const imageInput = document.getElementById("imageInput-js");
+        const uploadContainer = document.getElementById("uploadContainer-js");
+        const imagePreview = document.getElementById("imagePreview-js");
+        const previewContainer = document.getElementById("previewContainer-js");
+        const removeBtn = document.getElementById("removeBtn-js");
+
+        imageInput.addEventListener("change", () => {
+            const file = imageInput.files[0];
 
             if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function(e) {
-                    preview.src = e.target.result;
-                    previewContainer.classList.remove("hidden");
-                };
-
-                reader.readAsDataURL(file);
+                imagePreview.src = URL.createObjectURL(file);
+                previewContainer.classList.remove("hidden");
+                uploadContainer.classList.add("hidden");
             }
         });
 
-        document.getElementById('remove-image-js').addEventListener('click', function() {
-            const image = document.getElementById('image-js');
-            const preview = document.getElementById("preview-js");
-            const previewContainer = document.getElementById('preview-container-js');
-
-            image.value = '';
-            previewContainer.classList.add('hidden');
-            preview.src = '#';
+        removeBtn.addEventListener("click", () => {
+            imageInput.value = "";
+            imagePreview.src = "";
+            previewContainer.classList.add("hidden");
+            uploadContainer.classList.remove("hidden");
         });
     </script>
 </x-admin-layout>

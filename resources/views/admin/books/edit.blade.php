@@ -40,17 +40,30 @@
                 <div class="col-span-2">
                     <label class="block text-lg mb-2">Image*</label>
 
-                    <label for="image"
-                        class="bg-white hover:bg-slate-100 border-2 border-zinc-400 rounded-md py-8 border-dotted flex flex-col justify-center items-center gap-2 cursor-pointer">
-                        <span class="text-4xl text-zinc-500">
-                            <i class="fa-solid fa-file-arrow-up"></i>
-                        </span>
-                        <span class="text-lg text-zinc-600">
-                            Upload an image
-                        </span>
+                    <label for="imageInput-js"
+                        class="bg-white h-[142px] hover:bg-slate-100 border-2 border-zinc-400 rounded-md py-8 border-dotted flex justify-center items-center cursor-pointer">
+                        <div id="uploadContainer-js">
+                            <div class="flex flex-col justify-center items-center gap-2">
+                                <span class="text-4xl text-zinc-500">
+                                    <i class="fa-solid fa-file-arrow-up"></i>
+                                </span>
+                                <span class="text-md text-zinc-600">
+                                    Upload an image
+                                </span>
+                            </div>
+                        </div>
+
+                        <div id="previewContainer-js" class="h-auto relative hidden">
+                            <img class="h-[120px]" id="imagePreview-js" src="#" alt="Preview">
+                            <button type="button"
+                                class="absolute -top-1.5 -right-1.5 h-6 w-6 flex items-center justify-center cursor-pointer text-sm text-white bg-red-600 rounded-full"
+                                id="removeBtn-js">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
                     </label>
 
-                    <input type="file" name="image" id="image" class="hidden">
+                    <input type="file" name="image" id="imageInput-js" class="hidden">
                 </div>
 
                 <div>
@@ -102,6 +115,30 @@
                 Update Book
             </button>
         </form>
-
     </div>
+
+    <script>
+        const imageInput = document.getElementById("imageInput-js");
+        const uploadContainer = document.getElementById("uploadContainer-js");
+        const imagePreview = document.getElementById("imagePreview-js");
+        const previewContainer = document.getElementById("previewContainer-js");
+        const removeBtn = document.getElementById("removeBtn-js");
+
+        imageInput.addEventListener("change", () => {
+            const file = imageInput.files[0];
+
+            if (file) {
+                imagePreview.src = URL.createObjectURL(file);
+                previewContainer.classList.remove("hidden");
+                uploadContainer.classList.add("hidden");
+            }
+        });
+
+        removeBtn.addEventListener("click", () => {
+            imageInput.value = "";
+            imagePreview.src = "";
+            previewContainer.classList.add("hidden");
+            uploadContainer.classList.remove("hidden");
+        });
+    </script>
 </x-admin-layout>
