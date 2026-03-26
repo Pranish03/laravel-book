@@ -9,3 +9,11 @@ Route::get('/', function () {
 Route::get('/book', function () {
     return view('book-detail');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
+Route::get('/manage-book', function () {
+    return view('dashboard.manage-book');
+});

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Book Store</title>
+    <title>Book Store Dashboard</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -15,13 +15,13 @@
 </head>
 
 <body>
-    <x-header />
+    <main class="flex h-dvh">
+        <x-sidebar />
 
-    <main>
-        {{ $slot }}
+        <section class="px-14 py-8 w-[calc(100vw-288px)]">
+            {{ $slot }}
+        </section>
     </main>
-
-    <x-footer />
 </body>
 
 </html>
