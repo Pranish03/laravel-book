@@ -1,15 +1,11 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/book', function () {
-    return view('book-detail');
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/book/{id}', [PageController::class, 'detail']);
 
 Route::get('admin', function () {
     return view('admin.index');

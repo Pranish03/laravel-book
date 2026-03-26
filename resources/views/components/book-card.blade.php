@@ -1,7 +1,7 @@
-@props(['imgUrl', 'title', 'author', 'price'])
+@props(['img_url', 'title', 'author', 'price'])
 
 <div>
-    <img class="mb-2" src="{{ $imgUrl }}" alt="{{ $title }}">
+    <img class="mb-2" src="{{ asset($img_url) }}" alt="{{ $title }}">
     <h3 class="text-xl font-semibold text-zinc-900 overflow-hidden whitespace-nowrap text-ellipsis">
         {{ $title }}
     </h3>
