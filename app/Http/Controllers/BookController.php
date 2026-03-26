@@ -67,6 +67,10 @@ class BookController extends Controller
         $file = $request->image;
 
         if ($file) {
+            if ($book->img_url && file_exists(public_path($book->img_url))) {
+                unlink(public_path($book->img_url));
+            }
+
             $file_name = time() . "_" . rand() . "." . $file->getClientOriginalExtension();
             $file->move("images/", $file_name);
             $book->img_url = "images/{$file_name}";
