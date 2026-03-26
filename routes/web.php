@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -21,3 +22,5 @@ Route::get('admin/books', function () {
 Route::get('admin/books/create', function () {
     return view('admin.books.create');
 });
+
+Route::post('admin/books/store', [BookController::class, 'store']);
