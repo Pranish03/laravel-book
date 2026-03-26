@@ -15,12 +15,8 @@ Route::get('admin', function () {
     return view('admin.index');
 });
 
-Route::get('admin/books', function () {
-    return view('admin.books.index');
-});
-
-Route::get('admin/books/create', function () {
-    return view('admin.books.create');
-});
-
+// Manage book routes
+Route::get('admin/books', [BookController::class, 'index']);
+Route::get('admin/books/create', [BookController::class, 'create']);
 Route::post('admin/books/store', [BookController::class, 'store']);
+Route::delete('admin/books/delete/{id}', [BookController::class, 'delete']);

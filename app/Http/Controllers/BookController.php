@@ -7,6 +7,18 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
+    public function index()
+    {
+        $books = Book::all();
+
+        return view('admin.books.index', compact('books'));
+    }
+
+    public function create()
+    {
+        return view('admin.books.create');
+    }
+
     public function store(Request $request)
     {
         $book = new Book();
@@ -29,6 +41,19 @@ class BookController extends Controller
         }
 
         $book->save();
-        return redirect("/admin/books");
+        return redirect('/admin/books');
+    }
+
+    public function delete(string $id)
+    {
+        $book = Book::find($id);
+
+        if ($book->img_url && file_exists(public_path($book->img_url))) {
+            unlink(public_path($book->img_url));
+        }
+
+        $book->delete();
+
+        return redirect('admin/books');
     }
 }
