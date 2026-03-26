@@ -9,9 +9,10 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
             </span>
             <input type="text" placeholder="Search..."
-                class="w-80 border border-zinc-500 pl-10 pr-3 py-2 outline-none rounded-md focus:border-slate-700 focus:ring-3 focus:ring-slate-300">
+                class="w-80 border border-zinc-400 pl-10 pr-3 py-2 outline-none rounded-md focus:border-slate-700 focus:ring-3 focus:ring-slate-300 placeholder:text-zinc-500">
         </div>
-        <a href=""
+
+        <a href="/admin/books/create"
             class="border border-slate-600 bg-slate-600 text-white font-semibold px-4 py-2 rounded-md cursor-pointer">
             <i class="fa-solid fa-circle-plus"></i>
             Add Book

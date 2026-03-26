@@ -18,7 +18,7 @@
     <main class="flex h-dvh">
         <x-sidebar />
 
-        <section class="px-14 py-8 w-[calc(100vw-288px)]">
+        <section class="px-20 py-8 w-[calc(100vw-288px)]">
             {{ $slot }}
         </section>
     </main>
