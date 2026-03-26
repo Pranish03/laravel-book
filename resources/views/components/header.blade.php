@@ -35,8 +35,7 @@
                 <div id="menu-js"
                     class="absolute shadow border border-zinc-200 rounded-lg text-lg py-1 w-max space-y-1 bg-white text-zinc-800 z-50 top-13 left-0 hidden">
                     <div class="px-1">
-                        <a href="/dashboard"
-                            class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
+                        <a href="/admin" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
                             Dashboard
                         </a>
                     </div>

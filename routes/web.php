@@ -10,10 +10,10 @@ Route::get('/book', function () {
     return view('book-detail');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
+Route::get('admin', function () {
+    return view('admin.index');
 });
 
-Route::get('/manage-book', function () {
-    return view('dashboard.manage-book');
+Route::get('admin/books', function () {
+    return view('admin.books.index');
 });
