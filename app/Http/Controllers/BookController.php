@@ -41,6 +41,8 @@ class BookController extends Controller
         }
 
         $book->save();
+
+        toast('Book created successfully!', 'success');
         return redirect()->route('admin.books.index');
     }
 
@@ -77,6 +79,8 @@ class BookController extends Controller
         }
 
         $book->save();
+
+        toast('Book updated successfully!', 'success');
         return redirect()->route('admin.books.index');
     }
 
@@ -90,6 +94,7 @@ class BookController extends Controller
 
         $book->delete();
 
+        toast('Book deleted successfully!', 'success');
         return redirect()->route('admin.books.index');
     }
 }
