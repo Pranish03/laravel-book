@@ -12,7 +12,7 @@
                 class="w-80 border border-zinc-400 pl-10 pr-3 py-2 outline-none rounded-md focus:border-slate-700 focus:ring-3 focus:ring-slate-300 placeholder:text-zinc-500">
         </div>
 
-        <a href="/admin/books/create"
+        <a href="{{ route('admin.books.create') }}"
             class="border border-slate-600 bg-slate-600 text-white font-semibold px-4 py-2 rounded-md cursor-pointer">
             <i class="fa-solid fa-circle-plus"></i>
             Add Book
@@ -44,11 +44,11 @@
                         <td class="py-3 px-4">{{ $book->updated_at->diffForHumans() }}</td>
                         <td class="py-3 px-4">
                             <div class="flex items-center gap-4 text-xl">
-                                <a href="/admin/books/{{ $book->id }}/edit" class="text-slate-600">
+                                <a href="{{ route('admin.books.edit', $book->id) }}" class="text-slate-600">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
 
-                                <form method="POST" action="/admin/books/{{ $book->id }}">
+                                <form method="POST" action="{{ route('admin.books.delete', $book->id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class="text-red-600 cursor-pointer" type="submit">

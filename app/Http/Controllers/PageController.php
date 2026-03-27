@@ -20,4 +20,9 @@ class PageController extends Controller
 
         return view('book-detail', compact('book'));
     }
+
+    public function dashboard()
+    {
+        return view('admin.index');
+    }
 }

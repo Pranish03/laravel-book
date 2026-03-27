@@ -1,6 +1,6 @@
 <x-admin-layout>
     <div class="mb-4">
-        <a href="/admin/books" class="text-zinc-600 hover:text-zinc-900">
+        <a href="{{ route('admin.books.index') }}" class="text-zinc-600 hover:text-zinc-900">
             <i class="fa-solid fa-arrow-left"></i>
             <span class="hover:underline">
                 Go back
@@ -13,7 +13,7 @@
     </h1>
 
     <div class="mt-8">
-        <form class="w-300" action="/admin/books/store" method="POST" enctype="multipart/form-data">
+        <form class="w-300" action="{{ route('admin.books.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="w-full grid grid-cols-3 gap-8">
                 <div>

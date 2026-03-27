@@ -1,6 +1,6 @@
 <header class="py-5">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <a href="/" class="shrink-0 font-bold text-3xl text-slate-700">
+        <a href="{{ route('index') }}" class="shrink-0 font-bold text-3xl text-slate-700">
             BookStore
         </a>
         <div class="hidden md:flex items-stretch">
@@ -35,18 +35,19 @@
                 <div id="menu-js"
                     class="absolute shadow border border-zinc-200 rounded-lg text-lg py-1 w-max space-y-1 bg-white text-zinc-800 z-50 top-13 left-0 hidden">
                     <div class="px-1">
-                        <a href="/admin" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
+                        <a href="{{ route('dashboard') }}"
+                            class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
                             Dashboard
                         </a>
                     </div>
                     <div class="border-b border-zinc-200"></div>
                     <div class="px-1">
-                        <a href="" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
+                        <a href="#" class="bg-white min-w-[140px] hover:bg-slate-100 px-3 py-1 block rounded-md">
                             Account
                         </a>
                     </div>
                     <div class="px-1">
-                        <a href=""
+                        <a href="#"
                             class="bg-white min-w-[140px] hover:bg-red-100 text-red-600 px-3 py-1 block rounded-md">
                             Logout
                         </a>

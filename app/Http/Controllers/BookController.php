@@ -41,7 +41,7 @@ class BookController extends Controller
         }
 
         $book->save();
-        return redirect('/admin/books');
+        return redirect()->route('admin.books.index');
     }
 
     public function edit(string $id)
@@ -77,7 +77,7 @@ class BookController extends Controller
         }
 
         $book->save();
-        return redirect('/admin/books');
+        return redirect()->route('admin.books.index');
     }
 
     public function delete(string $id)
@@ -90,6 +90,6 @@ class BookController extends Controller
 
         $book->delete();
 
-        return redirect('admin/books');
+        return redirect()->route('admin.books.index');
     }
 }
